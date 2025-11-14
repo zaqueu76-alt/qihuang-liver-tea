@@ -1,233 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-MZ">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cha de Vista QiHuang Liver Tea - Landing Page</title>
-<style>
-  * {margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif;}
-  body {background-color:#000; color:#fff; line-height:1.5;}
-  a {text-decoration:none;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site de Chá</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* fundo preto */
+            color: #fff; /* texto branco */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
 
-  /* Contador regressivo */
-  #promo-timer {
-    background:#ff4d4d;
-    color:#fff;
-    text-align:center;
-    padding:12px;
-    font-size:1.2em;
-    font-weight:bold;
-    letter-spacing:1px;
-    border-bottom:3px solid #b80000;
-  }
+        h1 {
+            color: gold; /* título em dourado */
+            margin-top: 20px;
+        }
 
-  /* Hero Section */
-  header {text-align:center; padding:80px 20px 60px 20px;}
-  header h1 {font-size:3em; color:#FFD700; margin-bottom:15px;}
-  header p {font-size:1.3em; margin-bottom:30px; color:#fff;}
-  .hero-img {max-width:350px; border-radius:15px; margin-top:20px;}
+        .produtos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px;
+        }
 
-  /* Botão Compra Agora destacado */
-  .btn {
-    display:inline-block;
-    padding:20px 40px;
-    font-weight:bold;
-    font-size:1.2em;
-    border-radius:20px;
-    background-color:#00FF00;
-    color:#000;
-    animation: blink 1s infinite;
-    margin-top:30px;
-  }
-  @keyframes blink {
-    0% {box-shadow:0 0 10px #00FF00;}
-    50% {box-shadow:0 0 20px #00FF00;}
-    100% {box-shadow:0 0 10px #00FF00;}
-  }
-  .btn:hover {opacity:0.8;}
+        .produto {
+            background-color: #111; /* fundo escuro para cada produto */
+            border-radius: 15px;
+            padding: 15px;
+            width: 250px;
+            box-shadow: 0 0 10px gold;
+        }
 
-  /* Seção Benefícios */
-  section {padding:60px 20px; text-align:center;}
-  section h2 {color:#FFD700; font-size:2em; margin-bottom:30px;}
-  .benefits {display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
-  .benefit {
-    background:#111;
-    padding:20px;
-    border-radius:15px;
-    width:280px;
-    box-shadow:0 4px 12px rgba(255,215,0,0.5);
-    text-align:left;
-  }
-  .benefit h3 {color:#FFD700; margin-bottom:10px;}
-  .benefit p {color:#fff;}
+        .produto img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
 
-  /* Oferta */
-  .offer {
-    background:#222;
-    color:#fff;
-    padding:50px 20px;
-    border-radius:15px;
-    margin-top:40px;
-    text-align:center;
-  }
-  .offer p {font-size:1.2em; margin:10px 0;}
-  .offer .price {font-size:2em; font-weight:bold; color:#FFD700;}
-  
-  /* Avaliações */
-  .reviews {display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:40px;}
-  .review {
-    background:#fff; color:#000;
-    padding:20px; border-radius:15px;
-    width:300px; text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,0.3);
-  }
-  .review img {width:60px; height:60px; border-radius:50%; margin-bottom:10px;}
-  .review h4 {color:#1e3a8a; margin-bottom:5px;}
-  .review p {font-size:0.95em; margin-top:10px;}
+        .botao-comprar {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 12px;
+            background-color: green;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            animation: piscar 1s infinite;
+        }
 
-  /* Formulário */
-  #formulario {background:#111; padding:60px 20px; border-radius:15px; margin-top:40px; max-width:600px; margin-left:auto; margin-right:auto;}
-  #formulario h2 {color:#FFD700; margin-bottom:30px;}
-  form {display:flex; flex-direction:column;}
-  form label {font-weight:bold; margin-top:10px; color:#FFD700;}
-  form input, form select, form button {padding:12px; margin:8px 0; border-radius:10px; border:none; font-size:1em;}
-  form input, form select {width:100%;}
-  form button {background-color:#00FF00; color:#000; font-weight:bold; font-size:1.2em; cursor:pointer; animation: blink 1s infinite;}
-  form button:hover {opacity:0.8;}
-
-  footer {background:#111; color:#fff; text-align:center; padding:20px; margin-top:50px;}
-  
-  @media(max-width:768px) {
-    .benefits, .reviews {flex-direction:column; align-items:center;}
-  }
-</style>
+        @keyframes piscar {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0.5; }
+        }
+    </style>
 </head>
 <body>
+    <h1>Chá Natural para Pressão e Açúcar</h1>
 
-<!-- Contador regressivo -->
-<div id="promo-timer">
-  ⏳ Promoção termina em: <span id="countdown"></span>
-</div>
+    <div class="produtos">
+        <div class="produto">
+            <img src="chavista.jpeg.webp" alt="Chá Vista">
+            <p>Preço: 999MT | Promoção: 2 unidades por 1499MT</p>
+            <a href="#" class="botao-comprar">Compra Agora</a>
+        </div>
 
-<!-- Hero Section -->
-<header>
-  <h1>Cha de Vista QiHuang Liver Tea</h1>
-  <p>Equilibre seu fígado e saúde ocular com nosso chá natural de alta qualidade!</p>
-  <img src="chavista.jpeg.webp" alt="Cha de Vista QiHuang Liver Tea" class="hero-img">
-  <div><a href="#formulario" class="btn">Compra Agora</a></div>
-</header>
+        <div class="produto">
+            <img src="cliente1.jpeg.jpeg" alt="Cliente 1">
+            <p>Resultados reais de quem usou</p>
+        </div>
 
-<!-- Benefícios -->
-<section>
-  <h2>Benefícios do QiHuang Liver Tea</h2>
-  <div class="benefits">
-    <div class="benefit"><h3>1. Saúde do Fígado</h3><p>Auxilia na desintoxicação e manutenção da função hepática.</p></div>
-    <div class="benefit"><h3>2. Visão Protegida</h3><p>Ingredientes que ajudam a melhorar a saúde ocular.</p></div>
-    <div class="benefit"><h3>3. Ação Antioxidante</h3><p>Combate radicais livres e protege as células do corpo.</p></div>
-    <div class="benefit"><h3>4. Digestão Melhorada</h3><p>Ajuda no funcionamento do sistema digestivo e metabolismo.</p></div>
-    <div class="benefit"><h3>5. Redução do Cansaço</h3><p>Promove energia e bem-estar durante o dia.</p></div>
-    <div class="benefit"><h3>6. 100% Natural</h3><p>Sem químicos, seguro para uso diário, sabor agradável.</p></div>
-  </div>
-</section>
+        <div class="produto">
+            <img src="cliente2.jpeg.jpeg" alt="Cliente 2">
+            <p>Resultados reais de quem usou</p>
+        </div>
 
-<!-- Oferta -->
-<section class="offer">
-  <h2>Oferta Especial</h2>
-  <p class="price">1 unidade: 999MT</p>
-  <p>Na compra de 2 unidades: 1499MT</p>
-  <a href="#formulario" class="btn">Compra Agora</a>
-</section>
-
-<!-- Formulário de Pedido -->
-<section id="formulario">
-  <h2>Formulário de Pedido</h2>
-  <form id="pedidoForm">
-    <label for="nome">Nome *</label>
-    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-
-    <label for="numero">Número de Telefone *</label>
-    <input type="tel" id="numero" name="numero" placeholder="Ex: 84XXXXXXX" required>
-
-    <label for="bairro">Bairro *</label>
-    <input type="text" id="bairro" name="bairro" placeholder="Digite seu bairro" required>
-
-    <label for="horario">Horário Preferido *</label>
-    <input type="text" id="horario" name="horario" placeholder="Ex: 14:00 - 16:00" required>
-
-    <label for="quantidade">Quantidade *</label>
-    <select id="quantidade" name="quantidade" required>
-      <option value="">Selecione a quantidade</option>
-      <option value="1">1 unidade</option>
-      <option value="2">2 unidades</option>
-      <option value="3">3 unidades</option>
-      <option value="4">4 unidades</option>
-    </select>
-
-    <button type="submit">Enviar Pedido</button>
-  </form>
-</section>
-
-<!-- Avaliações -->
-<section>
-  <h2>Avaliações dos Clientes</h2>
-  <div class="reviews">
-    <div class="review">
-      <img src="cliente1.jpeg.jpeg" alt="Cliente 1">
-      <h4>Maria Silva</h4>
-      <p>"Senti minha visão muito melhor após algumas semanas usando o chá."</p>
+        <div class="produto">
+            <img src="cliente3.jpeg.jpeg" alt="Cliente 3">
+            <p>Resultados reais de quem usou</p>
+        </div>
     </div>
-    <div class="review">
-      <img src="cliente2.jpeg.jpeg" alt="Cliente 2">
-      <h4>João Santos</h4>
-      <p>"Produto natural e eficaz! Recomendo para amigos e familiares."</p>
-    </div>
-    <div class="review">
-      <img src="cliente3.jpeg.jpeg" alt="Cliente 3">
-      <h4>Ana Costa</h4>
-      <p>"Adorei o sabor e senti diferença na energia e bem-estar."</p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  &copy; 2025 QiHuang Liver Tea. Todos os direitos reservados.
-</footer>
-
-<script>
-// Contador regressivo
-let duration = 24 * 60 * 60 * 1000; // 24 horas
-let endTime = new Date().getTime() + duration;
-let timer = setInterval(function() {
-  let now = new Date().getTime();
-  let diff = endTime - now;
-  if(diff <= 0) {
-    clearInterval(timer);
-    document.getElementById("countdown").innerHTML = "00:00:00";
-  } else {
-    let hours = Math.floor(diff / (1000*60*60));
-    let minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
-    let seconds = Math.floor((diff % (1000*60)) / 1000);
-    document.getElementById("countdown").innerHTML =
-      (hours<10?"0"+hours:hours)+":"+
-      (minutes<10?"0"+minutes:minutes)+":"+
-      (seconds<10?"0"+seconds:seconds);
-  }
-}, 1000);
-
-// Formulário WhatsApp
-const form = document.getElementById('pedidoForm');
-form.addEventListener('submit', function(e){
-  e.preventDefault(); 
-  const nome = document.getElementById('nome').value;
-  const numero = document.getElementById('numero').value;
-  const bairro = document.getElementById('bairro').value;
-  const horario = document.getElementById('horario').value;
-  const quantidade = document.getElementById('quantidade').value;
-  const mensagem = `Olá, meu nome é ${nome}, telefone: ${numero}, bairro: ${bairro}, horário preferido: ${horario}, quero comprar ${quantidade} unidade(s) de QiHuang Liver Tea.`;
-  const whatsappLink = `https://wa.me/258868646216?text=${encodeURIComponent(mensagem)}`;
-  window.open(whatsappLink, '_blank');
-});
-</script>
-
 </body>
 </html>
